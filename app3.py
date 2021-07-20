@@ -17,9 +17,13 @@ stores=[
 #get use to send data
 
 #post /store data: (name)
-@app.route("/store", methods= ["Post"])
+@app.route("/store", methods= ["POST"])
 def create_store():
     request_data= request.get_json()
+    new_store= {
+        'name':request_data['name'],
+        
+    }
 
 #get/store/<string:name>
 @app.route('/store/<string:name>')
